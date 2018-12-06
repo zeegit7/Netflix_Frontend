@@ -72,6 +72,8 @@ class Login extends Component {
               }
             }).catch(err => {
                 console.log("Login server error!!!");
+                this.state.errors.push("Please enter valid credentials")
+                this.setState({messageType:"alert alert-danger"})
                 return err;
                 });
 

@@ -61,3 +61,9 @@
     width: 92%;
     padding-left: 10%;
 }
+.jumbotron
+{
+    background: url('freestocks-org-618080-unsplash.jpg') no-repeat center center; 
+    background-size: contain;
+    background-position: center;
+}

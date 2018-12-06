@@ -427,9 +427,9 @@ class UserMovies extends Component {
 
                 <td>{inventoryItem.avgStars}</td>
 
-                <td>{inventoryItem.price}</td>
+                <td>${inventoryItem.price}</td>
       
-                <td><Button bsStyle="primary" onClick={()=>{this.handlePlayMovie(i)}}>{inventoryItem.availability}</Button></td>
+                <td><Button bsStyle="primary" style={{width:"140px"}} onClick={()=>{this.handlePlayMovie(i)}}>{inventoryItem.availability}</Button></td>
       
               </tr>
       
@@ -497,7 +497,7 @@ class UserMovies extends Component {
 
                   <div className="col-md-2">
 
-                  <input name="synopsis" className="inp" placeholder ="Filter on stars" onChange= {(e)=>{this.filterSearchMovie.stars=e.target.value}}/>
+                  <input name="synopsis" className="inp" placeholder ="Filter stars" onChange= {(e)=>{this.filterSearchMovie.stars=e.target.value}}/>
 
                           <div className="form-check">
                             <input className="form-check-input" type="checkbox" onChange={() => this.checkStarsFilter()}/>
@@ -510,7 +510,7 @@ class UserMovies extends Component {
 
                   <div className="col-md-2 ">
 
-                  <input name="actors" className="inp" placeholder ="Filter on actors" onChange= {(e)=>{this.filterSearchMovie.actors=e.target.value}}/>
+                  <input name="actors" className="inp" placeholder ="Filter actors" onChange= {(e)=>{this.filterSearchMovie.actors=e.target.value}}/>
 
                           <div className="form-check">
                             <input className="form-check-input" type="checkbox" onChange={() => this.checkActorsFilter()}/>
@@ -522,7 +522,7 @@ class UserMovies extends Component {
 
 
                   <div className="col-md-2">
-                  <input name="director" className="inp" placeholder ="Filter on director" onChange= {(e)=>{this.filterSearchMovie.director=e.target.value}}/>
+                  <input name="director" className="inp" placeholder ="Filter director" onChange= {(e)=>{this.filterSearchMovie.director=e.target.value}}/>
 
                           <div className="form-check">
                             <input className="form-check-input" type="checkbox" onChange={() => this.checkDirectorFilter()}/>
@@ -535,7 +535,7 @@ class UserMovies extends Component {
 
                   <div className="col-md-2">
 
-                  <input name="genre" className="inp" placeholder ="Filter on genre" onChange= {(e)=>{this.filterSearchMovie.genre=e.target.value}}/>
+                  <input name="genre" className="inp" placeholder ="Filter genre" onChange= {(e)=>{this.filterSearchMovie.genre=e.target.value}}/>
 
                           <div className="form-check">
                             <input className="form-check-input" type="checkbox" onChange={() => this.checkGenreFilter()}/>
@@ -547,7 +547,7 @@ class UserMovies extends Component {
 
 
                   <div className="col-md-2">
-                  <input name="year" className="inp" placeholder ="Filter on year" onChange= {(e)=>{this.filterSearchMovie.year=e.target.value}}/>
+                  <input name="year" className="inp" placeholder ="Filter year" onChange= {(e)=>{this.filterSearchMovie.year=e.target.value}}/>
 
                           <div className="form-check">
                             <input className="form-check-input" type="checkbox" onChange={() => this.checkYearFilter()}/>
@@ -561,12 +561,12 @@ class UserMovies extends Component {
 
                   <div className="col-md-2">
 
-                  <input name="mpaa_rating" className="inp" placeholder ="Filter MPAA rating" onChange= {(e)=>{this.filterSearchMovie.mpaa_rating=e.target.value}}/>
+                  <input name="mpaa_rating" className="inp" placeholder ="Filter rating" onChange= {(e)=>{this.filterSearchMovie.mpaa_rating=e.target.value}}/>
 
                           <div className="form-check">
                             <input className="form-check-input" type="checkbox" onChange={() => this.checkRatingFilter()}/>
                             <label className="form-check-label">
-                              MPAA_Rating
+                              Rating
                             </label>
                           </div>
 

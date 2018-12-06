@@ -324,12 +324,12 @@ class PlayMovieUser extends Component {
 
                   </div>
 
-                  <div className="container">
+                  <div className="container" >
 
 
                           <Jumbotron>
 
-                              <p>
+                              <p className="text-white bg-dark">
 
                                 <b>Note:</b> If you have dues for the movie, please proceed to pay                   
                                 <Button bsStyle="primary" onClick={()=> {this.makeMoviePayment()}}>

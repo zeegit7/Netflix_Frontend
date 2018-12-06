@@ -46,7 +46,7 @@ class PlayMovieAdmin extends Component {
 
                       <div>
 
-                          <h1>{this.props.playMovieData.title}</h1>
+                          <h1 className="text-white bg-dark">{this.props.playMovieData.title}</h1>
 
                       </div>
 

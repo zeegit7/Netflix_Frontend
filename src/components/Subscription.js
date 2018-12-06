@@ -87,6 +87,8 @@ class Subscription extends Component {
 
         this.subsriptionDetails.month = "";
 
+        document.getElementById("subscription-form").reset();
+
 
 
     }

@@ -480,7 +480,7 @@ class AdminMovies extends Component {
 
                 <td>{inventoryItem.avgStars}</td>
 
-                <td>{inventoryItem.price}</td>
+                <td>${inventoryItem.price}</td>
 
                 <td><Button bsStyle="primary" onClick={()=>{this.handlePlayMovie(i)}}>Play</Button></td>
       

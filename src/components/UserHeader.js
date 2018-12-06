@@ -18,7 +18,8 @@ class UserHeader extends Component {
                         Browse
                       </a> 
                       <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="http://localhost:3000/browseMoviesUser">Movies</a>
+                        <a className="dropdown-item" href="http://localhost:3000/userMovies">Your Movies</a>
+                        <a className="dropdown-item" href="http://localhost:3000/browseMoviesUser">Top Movies</a>
                         <div className="dropdown-divider"></div>
                         <a className="dropdown-item" href="http://localhost:3000/subscription">Subscription</a>
                       </div>

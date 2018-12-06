@@ -26,18 +26,42 @@ class Dashboard extends Component {
             <br>
             </br>
 
+            <h1>Welcome to Movie Central!</h1>
+
+            <br>
+            
+            </br>
+
+            <br>
+            
+            </br>
+
+            
             <div className="container">
-            
-              <Jumbotron>
 
-                <h1>Welcome to Movie Central!</h1>
+                
+
+                <div className="jumbotron">
+                  
+                  <Jumbotron >
+
+                    <div className="sample">
 
 
-              </Jumbotron>
-            
-            
-            
-            </div>
+
+                    </div>
+
+                    
+
+
+                  </Jumbotron>
+
+
+
+                </div>
+
+
+              </div>
 
 
 
