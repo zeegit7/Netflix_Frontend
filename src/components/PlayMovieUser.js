@@ -251,7 +251,7 @@ class PlayMovieUser extends Component {
                         </div>
 
 
-                        <Jumbotron>
+                        <Jumbotron className="text-white bg-dark">
 
                             <div>
 
