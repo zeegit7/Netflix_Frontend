@@ -43,7 +43,8 @@ class UserMovies extends Component {
           filterYear : false,
           errors : [],
           showErrorMessages:false,
-          messageType : "alert alert-light" 
+          messageType : "alert alert-light",
+          activePage:1 
 
         };
 
@@ -63,6 +64,8 @@ class UserMovies extends Component {
         "mpaa_rating":""
 
     };
+
+    this.handlePageChange = this.handlePageChange.bind(this);
     
       }
 
@@ -394,6 +397,106 @@ class UserMovies extends Component {
 
       }
 
+      handlePageChange(event) {
+
+        console.log('handleTogglePage', Number(event.target.id));
+        this.setState({activePage:Number(event.target.id)})
+      
+      }
+      
+      getPaginatedTable(){
+
+        let user_inventory = this.state.user_inventory.map((inventoryItem, i)=>{
+          return(
+
+              <tr key={i}>
+   
+              <td>{inventoryItem.title}</td>
+    
+              <td>{inventoryItem.genre}</td>
+    
+              <td>{inventoryItem.year}</td>
+    
+              <td>{inventoryItem.studio}</td>
+
+              <td>{inventoryItem.actors}</td>
+    
+              <td>{inventoryItem.director}</td>
+    
+              <td>{inventoryItem.rating}</td>
+
+              <td>{inventoryItem.avgStars}</td>
+
+              <td>${inventoryItem.price}</td>
+    
+              <td><Button bsStyle="primary" style={{width:"140px"}} onClick={()=>{this.handlePlayMovie(i)}}>{inventoryItem.availability}</Button></td>
+    
+            </tr>
+    
+      )});
+
+      const PER_PAGE_SIZE = 10;
+      const totalPages = Math.ceil(this.state.user_inventory.length/PER_PAGE_SIZE);
+      const lastItem = this.state.activePage * PER_PAGE_SIZE;
+      const firstItem = lastItem - PER_PAGE_SIZE;
+      const pageInventory = user_inventory.slice(firstItem,lastItem);
+      
+      console.log("totalPages",totalPages)
+      var currentOffset = (this.state.activePage-1) * PER_PAGE_SIZE;
+      console.log("current offset", currentOffset)
+  
+      let pageNumbers = [];
+      for (let i = 1; i <= totalPages; i++) {
+  
+        pageNumbers.push(i);
+  
+      }
+
+      const renderPageNumbers = pageNumbers.map(number => {
+        return (
+          <Button
+            bsStyle="primary"
+            key={number}
+            id={number}
+            onClick={this.handlePageChange}
+          >
+            {number}
+          </Button>
+        );
+      });
+   
+    return (
+        <div>
+                <Table className = "table table-striped" striped bordered condensed hover responsive>
+                <thead className="thead-dark">
+                    <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                    <th>Studio</th>
+                    <th>Actors</th>
+                    <th>Director</th>
+                    <th>Mpaa_Rating</th>
+                    <th>Stars</th>
+                    <th>Price</th>
+                    <th>Play</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {pageInventory}
+                </tbody>
+                </Table>
+  
+              {renderPageNumbers}
+   
+        </div>
+    );
+  
+
+
+
+  }
+
 
     render() {
 
@@ -406,34 +509,7 @@ class UserMovies extends Component {
 
     )});
 
-        let user_inventory = this.state.user_inventory.map((inventoryItem, i)=>{
-            return(
 
-                <tr key={i}>
-     
-                <td>{inventoryItem.title}</td>
-      
-                <td>{inventoryItem.genre}</td>
-      
-                <td>{inventoryItem.year}</td>
-      
-                <td>{inventoryItem.studio}</td>
-
-                <td>{inventoryItem.actors}</td>
-      
-                <td>{inventoryItem.director}</td>
-      
-                <td>{inventoryItem.rating}</td>
-
-                <td>{inventoryItem.avgStars}</td>
-
-                <td>${inventoryItem.price}</td>
-      
-                <td><Button bsStyle="primary" style={{width:"140px"}} onClick={()=>{this.handlePlayMovie(i)}}>{inventoryItem.availability}</Button></td>
-      
-              </tr>
-      
-        )});
 
       return (
 
@@ -594,25 +670,7 @@ class UserMovies extends Component {
               <br></br>
 
               <div className="container-fluid">
-                <Table className = "table table-striped" striped bordered condensed hover responsive>
-                <thead className="thead-dark">
-                    <tr>
-                    <th>Title</th>
-                    <th>Genre</th>
-                    <th>Year</th>
-                    <th>Studio</th>
-                    <th>Actors</th>
-                    <th>Director</th>
-                    <th>Mpaa_Rating</th>
-                    <th>Stars</th>
-                    <th>Price</th>
-                    <th>Play</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {user_inventory}
-                </tbody>
-                </Table>
+                {this.getPaginatedTable()}
               </div>
 
 

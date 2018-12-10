@@ -12,7 +12,7 @@ const headers = {
 
   
 
-  var subscribtionEndDateUrl = 'http://localhost:8080/subscription/checkSubscriptionStatus/zeeshan.ali';
+  var subscribtionEndDateUrl = 'http://localhost:8080/subscription/checkSubscriptionStatus/';
 
   var subscribeUrl = 'http://localhost:8080/subscription/payForSubscription';
 
@@ -45,6 +45,10 @@ class Subscription extends Component {
 
 
     handleSubscription(e){
+
+        this.state.errors = [];
+
+        this.setState({messageType:"alert alert-light"})
 
         console.log("Subscription attempted");
 
@@ -99,6 +103,10 @@ class Subscription extends Component {
     }
 
     getSubscriptionEndDate(){
+
+        this.state.errors = [];
+
+        this.setState({messageType:"alert-alert-light"})
 
         console.log("Getting subscription end date")
 
@@ -172,6 +180,8 @@ class Subscription extends Component {
             {errors}
 
             </div>
+
+
 
           
 

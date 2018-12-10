@@ -25,15 +25,15 @@ class Financials extends Component {
 
         this.state = {
 
-            uniqueSubscriptionUsers : "",
-            uniquePpvUsers : "",
-            uniqueActiveUsers : "",
-            uniqueRegisteredUsers : "",
+            uniqueSubscriptionUsers : "NA",
+            uniquePpvUsers : "NA",
+            uniqueActiveUsers : "NA",
+            uniqueRegisteredUsers : "NA",
             queryMonth : "",
             queryYear : "",
-            monthlySubscriptionIncome : "",
-            monthlyPpvIncome : "",
-            monthlyTotalIncome : "",
+            monthlySubscriptionIncome : "NA",
+            monthlyPpvIncome : "NA",
+            monthlyTotalIncome : "NA",
             errors : [],
             showErrorMessages:false,
             messageType : "alert alert-light" 
@@ -44,6 +44,9 @@ class Financials extends Component {
     }
 
     handleFinancesSearch(){
+        this.state.errors = [];
+
+        this.setState({messageType:"alert alert-light"})
 
         this.state.queryMonth = parseInt(this.state.queryMonth);
 

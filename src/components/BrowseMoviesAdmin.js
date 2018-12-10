@@ -22,7 +22,10 @@ class BrowseMoviesAdmin extends Component {
     
           moviePlays: {},
           topMovies:[],
-          topMoviesMode : ""
+          topMoviesMode : "",
+          errors : [],
+          showErrorMessages:false,
+          messageType : "alert alert-light",
 
         };
 
@@ -38,6 +41,19 @@ class BrowseMoviesAdmin extends Component {
 
 
       handleSearchMoviePlaysDaily(){
+
+        this.state.errors = [];
+
+        this.setState({messageType:"alert alert-light"})
+
+        if(!this.searchedMovie.title){
+              this.state.errors.push("Enter movie name!");
+          }
+    
+          if(this.state.errors.length>0){
+            this.setState({messageType:"alert alert-danger"})
+            return
+          }
 
         this.searchedMovie.period = "day"
 
@@ -57,6 +73,7 @@ class BrowseMoviesAdmin extends Component {
             if(res){
 
                 console.log("Movie plays Search Successful!!")
+                
                 this.setState({moviePlays: res})
 
               }
@@ -75,6 +92,19 @@ class BrowseMoviesAdmin extends Component {
 
 
     handleSearchMoviePlaysWeekly(){
+
+        this.state.errors = [];
+
+        this.setState({messageType:"alert alert-light"})
+
+        if(!this.searchedMovie.title){
+            this.state.errors.push("Enter movie name!");
+        }
+  
+        if(this.state.errors.length>0){
+          this.setState({messageType:"alert alert-danger"})
+          return
+        }
 
 
         this.searchedMovie.period = "week"
@@ -114,6 +144,19 @@ class BrowseMoviesAdmin extends Component {
 
 
     handleSearchMoviePlaysMonthly(){
+
+        this.state.errors = [];
+
+        this.setState({messageType:"alert alert-light"})
+
+        if(!this.searchedMovie.title){
+            this.state.errors.push("Enter movie name!");
+        }
+  
+        if(this.state.errors.length>0){
+          this.setState({messageType:"alert alert-danger"})
+          return
+        }
 
 
         this.searchedMovie.period = "month"
@@ -265,6 +308,15 @@ class BrowseMoviesAdmin extends Component {
 
     render() {
 
+        let errors = this.state.errors.map((error, i)=>{
+            return(
+    
+                <div className="alert alert-danger" role="alert">
+                    {error}
+                </div>
+    
+        )});
+
         var topMovies = this.state.topMovies.map((topMovie, i)=>{
             return(
 
@@ -289,6 +341,12 @@ class BrowseMoviesAdmin extends Component {
         <div className="row">
           <div className="col-sm-1"></div>
           <div className="col-sm-10">
+
+            <div className={this.state.messageType}>
+
+            {errors}
+
+            </div>
 
             <br/>
             <br/>

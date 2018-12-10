@@ -1,9 +1,45 @@
 import React, { Component } from 'react';
 import '../App.css';
+import {history} from '../utils/utils';
+
+const headers = {
+  'Accept': 'application/json'
+};
+
+const logoutUrl = 'http://localhost:8080/user/logout';
 
 
 
 class UserHeader extends Component {
+
+  handleLogout(){
+
+    console.log("logout attempted")
+
+    fetch(`${logoutUrl}`, {
+      method: 'GET',
+      credentials:'include',
+      mode: 'cors',
+      headers: { ...headers,'Content-Type': 'application/json' }
+  }).then(res => res.json())
+  .then(res => {
+    console.log("res",res)
+      if(res){
+        console.log("logout Success!!")
+        history.push("/")
+          
+        }
+      else{
+          console.log("logout error!!")
+          
+        }
+      }).catch(err => {
+          console.log("Server error logout");
+          return err;
+          });
+
+
+  }
 
     render() {
       return (
@@ -25,7 +61,7 @@ class UserHeader extends Component {
                       </div>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="http://localhost:3000/" style={{color:"white"}}>Logout</a>
+                      <a className="nav-link" onClick={this.handleLogout} style={{color:"white"}}>Logout</a>
                     </li>
                   </ul>
 

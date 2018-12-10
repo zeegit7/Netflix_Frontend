@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AdminHeader from './AdminHeader';
 import FooterMainPage from './FooterMainPage';
 import AddMovie from './AddMovie';
-import {Button , Table} from 'react-bootstrap';
+import {Button , Table, Pagination} from 'react-bootstrap';
 //import {history} from '../utils/utils';
 import '../App.css';
 
@@ -49,7 +49,8 @@ class AdminMovies extends Component {
           filterYear : false,
           errors : [],
           showErrorMessages:false,
-          messageType : "alert alert-light"     
+          messageType : "alert alert-light",
+          activePage:1     
         };
 
         this.keywordSearchMovie = {
@@ -68,6 +69,8 @@ class AdminMovies extends Component {
         "mpaa_rating":""
 
     };
+
+    this.handlePageChange = this.handlePageChange.bind(this);
     
       }
 
@@ -446,6 +449,112 @@ class AdminMovies extends Component {
 
       }
 
+      handlePageChange(event) {
+
+        console.log('handleTogglePage', Number(event.target.id));
+        this.setState({activePage:Number(event.target.id)})
+      
+      }
+      
+      getPaginatedTable(){
+
+        let admin_inventory = this.state.admin_inventory.map((inventoryItem, i)=>{
+          return(
+
+              <tr key={i}>
+   
+              <td>{inventoryItem.title}</td>
+    
+              <td>{inventoryItem.genre}</td>
+    
+              <td>{inventoryItem.year}</td>
+    
+              <td>{inventoryItem.studio}</td>
+
+              <td>{inventoryItem.actors}</td>
+    
+              <td>{inventoryItem.director}</td>
+    
+              <td>{inventoryItem.rating}</td>
+
+              <td>{inventoryItem.avgStars}</td>
+
+              <td>${inventoryItem.price}</td>
+
+              <td><Button bsStyle="primary" onClick={()=>{this.handlePlayMovie(i)}}>Play</Button></td>
+    
+              <td><Button bsStyle="primary" onClick={()=>{this.handleMovieEdit(i)}}>Edit</Button></td>
+
+              <td><Button bsStyle="primary" onClick={()=>{this.handleMovieDelete(i)}}>Delete</Button></td>
+    
+            </tr>
+    
+      )});
+
+      const PER_PAGE_SIZE = 10;
+      const totalPages = Math.ceil(this.state.admin_inventory.length/PER_PAGE_SIZE);
+      const lastItem = this.state.activePage * PER_PAGE_SIZE;
+      const firstItem = lastItem - PER_PAGE_SIZE;
+      const pageInventory = admin_inventory.slice(firstItem,lastItem);
+      
+      console.log("totalPages",totalPages)
+      var currentOffset = (this.state.activePage-1) * PER_PAGE_SIZE;
+      console.log("current offset", currentOffset)
+  
+      let pageNumbers = [];
+      for (let i = 1; i <= totalPages; i++) {
+  
+        pageNumbers.push(i);
+  
+      }
+
+      const renderPageNumbers = pageNumbers.map(number => {
+        return (
+          <Button
+            bsStyle="primary"
+            key={number}
+            id={number}
+            onClick={this.handlePageChange}
+          >
+            {number}
+          </Button>
+        );
+      });
+   
+    return (
+        <div>
+              <Table className = "table table-striped" striped bordered condensed hover responsive style={{width: "80.5%", marginLeft: "10%"}}>
+                <thead className="thead-dark">
+                    <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Year</th>
+                    <th>Studio</th>
+                    <th>Actors</th>
+                    <th>Director</th>
+                    <th>Mpaa_Rating</th>
+                    <th>Stars</th>
+                    <th>Price</th>
+                    <th>Play</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {pageInventory}
+                </tbody>
+                </Table>
+  
+              {renderPageNumbers}
+   
+        </div>
+    );
+  
+
+
+
+  }
+
 
     render() {
 
@@ -459,38 +568,6 @@ class AdminMovies extends Component {
 
     )});
 
-        let admin_inventory = this.state.admin_inventory.map((inventoryItem, i)=>{
-            return(
-
-                <tr key={i}>
-     
-                <td>{inventoryItem.title}</td>
-      
-                <td>{inventoryItem.genre}</td>
-      
-                <td>{inventoryItem.year}</td>
-      
-                <td>{inventoryItem.studio}</td>
-
-                <td>{inventoryItem.actors}</td>
-      
-                <td>{inventoryItem.director}</td>
-      
-                <td>{inventoryItem.rating}</td>
-
-                <td>{inventoryItem.avgStars}</td>
-
-                <td>${inventoryItem.price}</td>
-
-                <td><Button bsStyle="primary" onClick={()=>{this.handlePlayMovie(i)}}>Play</Button></td>
-      
-                <td><Button bsStyle="primary" onClick={()=>{this.handleMovieEdit(i)}}>Edit</Button></td>
-
-                <td><Button bsStyle="primary" onClick={()=>{this.handleMovieDelete(i)}}>Delete</Button></td>
-      
-              </tr>
-      
-        )});
 
       return (
 
@@ -513,11 +590,6 @@ class AdminMovies extends Component {
               </div>
 
             </div>
-
-            
-
-
-
 
             
             <div>
@@ -629,7 +701,6 @@ class AdminMovies extends Component {
                           </div>
                   </div>
 
-                  {/* <div className="col-md-2"></div> */}
 
                   <div className="col-md-2">
 
@@ -668,27 +739,9 @@ class AdminMovies extends Component {
               
 
               <div>
-              <Table className = "table table-striped" striped bordered condensed hover responsive style={{width: "80.5%", marginLeft: "10%"}}>
-                <thead className="thead-dark">
-                    <tr>
-                    <th>Title</th>
-                    <th>Genre</th>
-                    <th>Year</th>
-                    <th>Studio</th>
-                    <th>Actors</th>
-                    <th>Director</th>
-                    <th>Mpaa_Rating</th>
-                    <th>Stars</th>
-                    <th>Price</th>
-                    <th>Play</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {admin_inventory}
-                </tbody>
-                </Table>
+
+                {this.getPaginatedTable()}
+
             </div>
 
 

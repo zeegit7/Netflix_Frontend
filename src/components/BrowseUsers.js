@@ -284,7 +284,6 @@ class BrowseUsers extends Component {
                     <th>User Name</th>
                     <th>Phone</th>
                     <th>City</th>
-                    <th>State</th>
                     <th>View History</th>
                     </tr>
                 </thead>
@@ -298,8 +297,6 @@ class BrowseUsers extends Component {
                 <td>{this.state.user.contactNo}</td>
 
                 <td>{this.state.user.city}</td>
-
-                <td>{this.state.user.state}</td>
 
                 <td><Button bsStyle="primary" onClick={()=>{this.viewUserHistory()}}>View</Button></td>
 
