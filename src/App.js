@@ -17,6 +17,7 @@ import Subscription from './components/Subscription';
 import Financials from './components/Financials';
 import Pay from './components/Pay';
 import Error from './components/Error';
+import Recommendation from './components/Recommendation';
 
 
 
@@ -85,6 +86,7 @@ class App extends Component {
         <Route  exact path="/subscription" component ={() => (<Subscription/>)}/> 
         <Route  exact path="/financials" component ={() => (<Financials/>)}/> 
         <Route  exact path="/pay" component ={() => (<Pay/>)}/> 
+        <Route  exact path="/recommendation" component ={() => (<Recommendation/>)}/> 
         <Route component={Error} />
         
         

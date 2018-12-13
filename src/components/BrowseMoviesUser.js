@@ -12,7 +12,7 @@ const headers = {
 
 const getTopPlayedMoviesUrl = 'http://localhost:8080/user/topTenMovies/month';
 
-const getTopRatedMoviesUrl = 'http://localhost:8080/user/topTenMovies/month';
+const getTopRatedMoviesUrl = 'http://localhost:8080/movies/scorecard';
 
 class BrowseMoviesUser extends Component {
 
@@ -44,6 +44,7 @@ class BrowseMoviesUser extends Component {
                     headers: { ...headers,'Content-Type': 'application/json'}
                 }).then(res => res.json())
                 .then(res => {
+                    console.log("res",res)
                     if(res){
                         console.log("Top played movies Search Successful!!")
                         this.setState({topMovies: res})
@@ -72,14 +73,20 @@ class BrowseMoviesUser extends Component {
                     headers: { ...headers,'Content-Type': 'application/json'}
                 }).then(res => res.json())
                 .then(res => {
-                    if(res){
-    
+                    console.log("res",res)
+                    if(res.moviename.length>0){
                         console.log("Top rated movies Search Successful!!")
-                        this.setState({topMovies: res})
+                        var resJsonArray = []
+                        for(var i =0;i<res.moviename.length;i++){
+                            var resJson = {"moviename":res.moviename[i]};
+                            resJsonArray.push(resJson);
+                        }
+                        
+                        this.setState({topMovies:resJsonArray})
         
                       }
                     else{
-                        console.log("Top rated movies Search  Error!!")
+                        console.log("No data!!")
                       }
                     }).catch(err => {
                         console.log("Top rated movies Search server error!!!");

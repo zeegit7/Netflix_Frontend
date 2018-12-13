@@ -536,11 +536,6 @@ class UserMovies extends Component {
 
               <br></br>
 
-              <h3 className="text-muted">Search Movie:</h3>
-              <br></br>
-
-
-
               <form id="search-movie-form">
               <div className="container-fluid">
                   <div className="row">

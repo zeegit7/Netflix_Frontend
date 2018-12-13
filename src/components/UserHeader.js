@@ -58,6 +58,7 @@ class UserHeader extends Component {
                         <a className="dropdown-item" href="http://localhost:3000/browseMoviesUser">Top Movies</a>
                         <div className="dropdown-divider"></div>
                         <a className="dropdown-item" href="http://localhost:3000/subscription">Subscription</a>
+                        <a className="dropdown-item" href="http://localhost:3000/recommendation">Recommendations</a>
                       </div>
                     </li>
                     <li className="nav-item">
