@@ -12,7 +12,7 @@ class Footer extends Component {
 
 
                       <nav className="navbar fixed-bottom  navbar-light bg-dark" style={{display: "inline-block", width: "100%"}}>
-                          <a className="navbar-brand" href="http://localhost:3000/"style={{color:"white", float: "left"}}>SJSU-Netflix</a>
+                          <a className="navbar-brand" href="https://netflix-cmpe275.herokuapp.com/"style={{color:"white", float: "left"}}>SJSU-Netflix</a>
       
                         </nav>
 

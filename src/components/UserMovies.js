@@ -668,12 +668,6 @@ class UserMovies extends Component {
                 {this.getPaginatedTable()}
               </div>
 
-
-
- 
-
-
-
           </div>
           <div className="col-sm-1"></div>
         </div>

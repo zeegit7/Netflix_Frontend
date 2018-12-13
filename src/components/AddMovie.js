@@ -140,11 +140,6 @@ class AddMovie extends Component {
 
         </div>
 
-
-
-            <div className="text-muted">
-              <h1>Add Movie:</h1>
-            </div>
         <br></br>
 
             <form id="add-movie-form">

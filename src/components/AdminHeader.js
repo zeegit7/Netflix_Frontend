@@ -47,18 +47,18 @@ class AdminHeader extends Component {
   
         <div>
               <nav className="navbar navbar-expand-lg navbar-light bg-dark" style={{display: "inline-block", width: "100%"}}>
-                <a className="navbar-brand" href="http://localhost:3000/" style={{color:"white", float: "left"}}>SJSU-Netflix</a>
+                <a className="navbar-brand" href="https://netflix-cmpe275.herokuapp.com/" style={{color:"white", float: "left"}}>SJSU-Netflix</a>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{float: "right"}}>
                   <ul className="navbar-nav mr-auto pull-right">
                     <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" href="http://localhost:3000/login" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:"white"}}>
+                      <a className="nav-link dropdown-toggle" href="https://netflix-cmpe275.herokuapp.com/login" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:"white"}}>
                         Browse
                       </a>
                       <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a className="dropdown-item" href="http://localhost:3000/browseMoviesAdmin">Movies</a>
-                        <a className="dropdown-item" href="http://localhost:3000/browseUsers">Users</a>
+                        <a className="dropdown-item" href="https://netflix-cmpe275.herokuapp.com/browseMoviesAdmin">Movies</a>
+                        <a className="dropdown-item" href="https://netflix-cmpe275.herokuapp.com/browseUsers">Users</a>
                         <div className="dropdown-divider"></div>
-                        <a className="dropdown-item" href="http://localhost:3000/financials">Financials</a>
+                        <a className="dropdown-item" href="https://netflix-cmpe275.herokuapp.com/financials">Financials</a>
                       </div>
                     </li>
                     <li className="nav-item">

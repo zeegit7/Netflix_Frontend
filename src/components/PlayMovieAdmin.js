@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-import '../App.css';
 import AdminHeader from './AdminHeader';
 import Footer from './Footer';
 import {Jumbotron } from 'react-bootstrap';
 import '../App.css';
-
-const headers = {
-  'Accept': 'application/json'
-};
 
 
 class PlayMovieAdmin extends Component {

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import AdminHeader from './AdminHeader';
 import FooterMainPage from './FooterMainPage';
 import AddMovie from './AddMovie';
-import {Button , Table, Pagination} from 'react-bootstrap';
-//import {history} from '../utils/utils';
+import {Button , Table} from 'react-bootstrap';
 import '../App.css';
 
 const headers = {
@@ -577,8 +576,6 @@ class AdminMovies extends Component {
                 <AdminHeader/>
             </div>
 
-            <br/><br/>
-
             <div className="col-sm-1"></div>
 
             <div className="container">
@@ -599,15 +596,6 @@ class AdminMovies extends Component {
 
               <br></br>
               <br></br>
-
-              <div className="text-muted">
-                <h1>Search Movies:</h1>
-              </div>
-
-              <br></br>
-              <br></br>
-
-            
 
             <form id="search-movie-form">
               <div className="container-fluid">
@@ -743,6 +731,8 @@ class AdminMovies extends Component {
                 {this.getPaginatedTable()}
 
             </div>
+
+            <br></br>
 
 
             <div><FooterMainPage/> </div>

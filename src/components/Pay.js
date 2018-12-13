@@ -1,26 +1,13 @@
 import React, { Component } from 'react';
 import {Label, Button} from 'react-bootstrap';
-//import {history} from '../utils/utils';
 import UserHeader from './UserHeader';
 import Footer from './Footer';
 import '../App.css';
 import {history} from '../utils/utils';
 
-const headers = {
-    'Accept': 'application/json'
-  };
 
 
 class Pay extends Component {
-
-    
-    constructor(){
-
-        super();
-
-
-    }
-
 
     handlePayment(){
 

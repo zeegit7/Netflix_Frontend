@@ -10,7 +10,6 @@ const headers = {
   'Accept': 'application/json'
 };
 var getPaymentDueUrl = 'http://localhost:8080/movies/findPrice/';
-var makePaymentUrl = '';
 var playMovieUrl = 'http://localhost:8080/movies/play/';
 var makePaymentUrl = 'http://localhost:8080/payPerView/payForPayPerView'
 
