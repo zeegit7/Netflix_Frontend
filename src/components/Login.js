@@ -36,6 +36,8 @@ class Login extends Component {
 
     handleLogin(e){
 
+        this.state.errors=[];
+
         var loginUrl = 'http://localhost:8080/user/login?email='+this.loginCredentials.email+'&password='+this.loginCredentials.password;
 
         console.log("Login attempted");
@@ -103,15 +105,13 @@ class Login extends Component {
     let errors = this.state.errors.map((error, i)=>{
         return(
 
-            <div className="alert alert-danger container" role="alert">
+            <p>
                 {error}
-            </div>
-
-
+            </p>
   
     )});
     return (
-      <div>
+      <div className = "mainBodyLogin">
 
           <div>
               <LoginHeader/>
@@ -129,41 +129,37 @@ class Login extends Component {
 
                 <form id="login-form">
 
-                    <h1 className = "text-muted"><Label>Login</Label></h1>
+                    
                     <br></br>
 
                     <div>
+                        <br></br>
+                        <div className="textBox">
 
-                        
-                    <div className={this.state.messageType}>
+                        <h1 style={{color: 'red'}}><Label>Login</Label></h1>
 
-                        {errors}
+                        <br></br>
 
+                            <input type="email" className="inputfield" name="email" placeholder="Enter Email" onChange= {(e)=>{this.loginCredentials.email=e.target.value}}/>
+
+                            <br></br>
+
+                            <br></br>
+
+                            <input type="password" className="inputfield" name="password" placeholder ="Enter password" onChange= {(e)=>{this.loginCredentials.password=e.target.value}}/>
+                            <br/>
+                            <br/>
+                            <div style={{color: 'red', float: 'left', marginLeft: '5%'}}>{errors}</div>
+                            
+                            <br/>
+                            <Button bsStyle="danger" onClick={()=> {this.handleLogin()}} style={{width: "90%", fontSize: 18, fontWeight: 700, backgroundColor: 'red'}}>
+                                Login
+                            </Button>
+
+
+
+                        </div>
                     </div>
-
-                    <br></br>
-
-
-                        <input type="email" name="email" placeholder ="Enter Email" onChange= {(e)=>{this.loginCredentials.email=e.target.value}}/>
-
-                        <br></br>
-
-                        <br></br>
-
-                        <input type="password" name="password" placeholder ="Enter password" onChange= {(e)=>{this.loginCredentials.password=e.target.value}}/>
-
-                        <br></br>
-
-                        <br></br>
-
-                    </div>
-
-                    <br></br>
-
-                    <Button bsStyle="primary" onClick={()=> {this.handleLogin()}}>
-                        Login
-                    </Button>
-
                 </form>
 
 
@@ -174,7 +170,7 @@ class Login extends Component {
 
 
           <div>
-              <Footer/>
+              {/* <Footer/> */}
           </div>
 
       </div>

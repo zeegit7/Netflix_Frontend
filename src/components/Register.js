@@ -93,6 +93,8 @@ class Register extends Component {
 
     handleRegister(e){
 
+        this.state.errors = [];
+
         console.log("Registration attempted");
 
         var today = this.formatDate();
@@ -139,89 +141,69 @@ class Register extends Component {
     let errors = this.state.errors.map((error, i)=>{
         return(
 
-            <div className="alert alert-danger container" role="alert">
+            <p>
                 {error}
-            </div>
+            </p>
 
 
   
     )});
 
     return (
-      <div>
+      <div className = "mainBodyRegister">
 
           <div>
               <RegisterHeader/>
           </div>
 
-          <br></br>
-
-          <br></br>
-
         <div className="row">
           <div className="col-sm-1"></div>
           <div className="col-sm-10">
 
-            <br/>
-            <br/>
-
-
 
             <form id="register-form">
 
-                <h1 className = "text-muted"><Label>Register</Label></h1>
-                <br></br>
-
                 <div>
 
+                        <br></br>
 
-                    <div className={this.state.messageType}>
+                    <div className="textBoxRegister">
 
-                        {errors}
+                    <h1 style={{color: 'red'}}><Label>Register</Label></h1>
+
+                    <br></br>
+
+                        <input type="text" className="inputfield"  name="name" placeholder ="Enter Name" onChange= {(e)=>{this.registrationCredentials.name=e.target.value}}/>
+
+                        <br></br>
+
+                        <input type="text" className="inputfield" name="contact" placeholder ="Enter phone number" onChange= {(e)=>{this.registrationCredentials.contact_no=e.target.value}}/>
+
+                        <br></br>
+
+                        <input type="text" className="inputfield" name="city" placeholder ="Enter city" onChange= {(e)=>{this.registrationCredentials.city=e.target.value}}/>
+
+                        <br></br>
+
+                        <input type="email" className="inputfield" name="email" placeholder ="Enter email" onChange= {(e)=>{this.registrationCredentials.email=e.target.value}}/>
+
+                        <br></br>
+
+                        <input type="password" className="inputfield" name="password" placeholder ="Enter password" onChange= {(e)=>{this.registrationCredentials.password=e.target.value}}/>
+
+                        <br></br>
+
+                        <div style={{color: 'red', float: 'left', marginLeft: '5%'}}>{errors}</div>
+                            
+                            <br/>
+                            <Button bsStyle="danger" onClick={()=> {this.handleRegister()}} style={{width: "90%", fontSize: 18, fontWeight: 700, backgroundColor: 'red'}}>
+                                Register
+                            </Button>
+
 
                     </div>
 
-                    <br></br>
-                    
-
-
-                    <input type="text"  name="name" placeholder ="Enter Name" onChange= {(e)=>{this.registrationCredentials.name=e.target.value}}/>
-
-                    <br></br>
-
-                    <br></br>
-
-                    <input type="text" name="contact" placeholder ="Enter phone number" onChange= {(e)=>{this.registrationCredentials.contact_no=e.target.value}}/>
-
-                    <br></br>
-
-                    <br></br>
-
-                    <input type="text" name="city" placeholder ="Enter city" onChange= {(e)=>{this.registrationCredentials.city=e.target.value}}/>
-
-                    <br></br>
-
-                    <br></br>
-
-                    <input type="email" name="email" placeholder ="Enter email" onChange= {(e)=>{this.registrationCredentials.email=e.target.value}}/>
-
-                    <br></br>
-
-                    <br></br>
-
-                    <input type="password" name="password" placeholder ="Enter password" onChange= {(e)=>{this.registrationCredentials.password=e.target.value}}/>
-
-                    <br></br>
-
-                    <br></br>
-
                 </div>
-
-                <br></br>
-
-                <Button bsStyle="primary" onClick={()=> {this.handleRegister()}}>
-                    Register
-                </Button>
 
                 </form>
 
@@ -231,14 +213,6 @@ class Register extends Component {
           <div className="col-sm-1"></div>
         </div>
 
-          
-
-
-
-
-          <div>
-              <Footer/>
-          </div>
 
       </div>
     );

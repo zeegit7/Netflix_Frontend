@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  height: 100%;
+}
+
+html {
+  height: 100%;
 }
 
 .App-logo {
@@ -53,6 +58,30 @@
 
 }
 
+.mainBody {
+    background-image: url('netflix.png');
+    height: 100%;
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mainBodyLogin {
+  background-image: url('login.jpg');
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mainBodyRegister {
+  background-image: url('login.jpg');
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .col-md-3, .col-md-4 {
     margin-top: 10px;
 }
@@ -61,9 +90,40 @@
     width: 92%;
     padding-left: 10%;
 }
-/* .jumbotron
-{
-    background: url('freestocks-org-618080-unsplash.jpg') no-repeat center center; 
-    background-size: contain;
-    background-position: center;
-} */
+
+.inputfield {
+    width: 90%;
+    border : 2px solid;
+    border-radius: 4px;
+    padding-left: 15px;
+    height: 50px;
+    
+}
+
+.textBox {
+
+  border : 2px solid;
+  border-radius: 4px;
+  padding-left: 15px;
+  background-color: black;
+  height: 400px;
+  width : 50%;
+  margin-left: 25%;
+  padding-top: 2%;
+  opacity: 0.8;
+
+}
+
+.textBoxRegister {
+
+  border : 2px solid;
+  border-radius: 4px;
+  padding-left: 15px;
+  background-color: black;
+  height: 650px;
+  width : 50%;
+  margin-left: 25%;
+  padding-top: 2%;
+  opacity: 0.8;
+
+}

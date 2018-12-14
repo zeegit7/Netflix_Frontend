@@ -9,8 +9,8 @@ class DashboardHeader extends Component {
       return (
   
         <div>
-              <nav className="navbar navbar-expand-lg navbar-light bg-dark" style={{display: "inline-block", width: "100%"}}>
-                <a className="navbar-brand" href="https://netflix-cmpe275.herokuapp.com/" style={{color:"white", float: "left"}}>SJSU-Netflix</a>
+              <nav className="navbar navbar-expand-lg navbar-light" style={{display: "inline-block", width: "100%", height: 100, padding: 20,fontSize: 20}}>
+                <a className="navbar-brand" href="https://netflix-cmpe275.herokuapp.com/" style={{color:"white", float: "left"}}>Movie-Central</a>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{float: "right"}}>
                   <ul className="navbar-nav mr-auto pull-right">
                     <li className="nav-item active">
