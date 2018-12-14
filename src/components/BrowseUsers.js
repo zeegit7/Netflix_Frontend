@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import AdminHeader from './AdminHeader';
-import Footer from './Footer';
 import {Button , Table} from 'react-bootstrap';
-//import {history} from '../utils/utils';
 import '../App.css';
 const headers = {
     'Accept': 'application/json'
@@ -259,7 +257,7 @@ class BrowseUsers extends Component {
             
             <br/><br/>
 
-             <h3 className="text-muted">Search User:</h3>
+             <h1 className="text-muted">Search User</h1>
             <br></br>
 
             <form id="search-user-form">
@@ -278,7 +276,7 @@ class BrowseUsers extends Component {
 
             <div>
                 <Table striped bordered condensed hover responsive>
-                <thead>
+                <thead className="thead-dark">
                     <tr>
                     <th>Full Name</th>
                     <th>User Name</th>
@@ -324,18 +322,18 @@ class BrowseUsers extends Component {
             <div>
 
                 <div>
-                    <h1>View Top users</h1>
+                    <h1 className="text-muted">Top users</h1>
                 </div>
 
                     <Button bsStyle="primary" onClick={()=> {this.handleGetTopUsersDaily()}}>
                         Daily
                     </Button>
 
-                    <Button bsStyle="primary" onClick={()=> {this.handleTopUsersWeekly()}}>
+                    <Button bsStyle="primary" style={{marginLeft:15}} onClick={()=> {this.handleTopUsersWeekly()}}>
                         Weekly
                     </Button>
 
-                    <Button bsStyle="primary" onClick={()=> {this.handleTopUsersMonthly()}}>
+                    <Button bsStyle="primary" style={{marginLeft:15}} onClick={()=> {this.handleTopUsersMonthly()}}>
                         Monthly
                     </Button>
 
@@ -346,7 +344,7 @@ class BrowseUsers extends Component {
 
             <div>
                 <Table striped bordered condensed hover responsive>
-                <thead>
+                <thead className="thead-dark">
                     <tr>
                     <th>Top Users</th>
                     </tr>
@@ -366,14 +364,6 @@ class BrowseUsers extends Component {
           <div className="col-sm-1"></div>
         </div>
 
-
-
-
-        <div>
-            <Footer/>
-        </div>
-            
-  
     </div>
 
       );

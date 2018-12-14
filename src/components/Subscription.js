@@ -168,7 +168,7 @@ class Subscription extends Component {
             <br/>
 
             <div>
-              <h1>Your subscription ends on: {this.state.subscriptionEndDate} </h1>
+              <h1 className="text-muted">Your subscription ends on: {this.state.subscriptionEndDate} </h1>
           </div>
 
           <br></br>
@@ -189,7 +189,7 @@ class Subscription extends Component {
 
           <form id="subscription-form">
 
-            <h1><Label>Subscribe Now : $10 per month only!</Label></h1>
+            <h1 className="text-muted"><Label>Subscribe/Extend Now : $10 per month only!</Label></h1>
 
             <br></br>
             <br></br>

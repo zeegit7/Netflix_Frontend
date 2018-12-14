@@ -96,11 +96,6 @@ class Recommendation extends Component {
             <br/>
 
             <div>
-
-                <div>
-                    <h1 className ="text-muted">Your Recommended Movies!</h1>
-                </div>
-
                 <br></br>
 
                 </div>
@@ -108,7 +103,7 @@ class Recommendation extends Component {
 
                 <div>
                 <Table striped bordered condensed hover responsive>
-                <thead>
+                <thead className="thead-dark">
                     <tr>
                     <th>Recommended Movies</th>
                     </tr>

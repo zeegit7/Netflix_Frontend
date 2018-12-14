@@ -52,6 +52,7 @@ class AddMovie extends Component {
     handleAddMovie(e){
 
         this.state.errors=[];
+        this.setState({messageType:"alert-alert-light"})
 
         console.log(" In handleAddMovie")
 
@@ -145,57 +146,71 @@ class AddMovie extends Component {
             <form id="add-movie-form">
                     <div className="container-fluid">
                       <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-md-12">
                             <input  className="inp" name="title" placeholder ="Enter title" required = {true} onChange= {(e)=>{this.newMovie.title=e.target.value}}/>
                         </div>
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                             <input name="genre" className="inp" placeholder ="Enter genre" onChange= {(e)=>{this.newMovie.genre=e.target.value}}/>
                         </div>
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                             <input name="year" className="inp" placeholder ="Enter year" onChange= {(e)=>{this.newMovie.year=e.target.value}}/>
                         </div>
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                             <input name="studio" className="inp" placeholder ="Enter studio" required = {true} onChange= {(e)=>{this.newMovie.studio=e.target.value}}/>   
                         </div>
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                             <input name="synopsis" className="inp" placeholder ="Enter synopsis" onChange= {(e)=>{this.newMovie.synopsis=e.target.value}}/>
                         </div>
-
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                         <input name="image_url" className="inp" placeholder ="Enter image_url" onChange= {(e)=>{this.newMovie.image_url=e.target.value}}/>
 
                         </div>
-
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                         <input name="movie_url" className="inp" placeholder ="Enter movie_url" onChange= {(e)=>{this.newMovie.movie_url=e.target.value}}/>
 
                         </div>
-
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                         <input name="actors" className="inp" placeholder ="Enter actors" onChange= {(e)=>{this.newMovie.actors=e.target.value}}/>
 
                         </div>
-
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                         <input name="director" className="inp" placeholder ="Enter director" onChange= {(e)=>{this.newMovie.director=e.target.value}}/>
                         </div>
-                        
-                        
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                         <input name="country" className="inp" placeholder ="Enter country" onChange= {(e)=>{this.newMovie.country=e.target.value}}/>
                         </div>
-
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                         <input name="rating" className="inp" placeholder ="Enter rating" onChange= {(e)=>{this.newMovie.rating=e.target.value}}/>
 
                         </div>
-                        <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                        <div className="col-md-12">
                         <input name="availability" className="inp" placeholder ="Enter availability" onChange= {(e)=>{this.newMovie.availability=e.target.value}}/>
                         </div>
-
-                        <div className="col-md-5"></div>
-                            
-                            <div className="col-md-3">
+                        <br></br>
+                        <br></br>
+                            <div className="col-md-12">
                             <input name="price" className="inp" placeholder ="Enter price" onChange= {(e)=>{this.newMovie.price=e.target.value}}/>
                             </div>
                             
@@ -206,8 +221,7 @@ class AddMovie extends Component {
                             <Button bsStyle="primary" onClick={()=> {this.handleAddMovie()}}>
                                 Add
                             </Button>
-                            <br/>
-                            <br/>
+
                     </div>
               
             </form>

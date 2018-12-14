@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import UserHeader from './UserHeader';
-import Footer from './Footer';
 import {Button , Table} from 'react-bootstrap';
-//import {history} from '../utils/utils';
 import '../App.css';
 
 const headers = {
@@ -129,7 +127,7 @@ class BrowseMoviesUser extends Component {
             <div>
 
                 <div>
-                    <h1 className ="text-muted">View Top Movies This Month!</h1>
+                    <h1 className ="text-muted">Top Movies This Month!</h1>
                 </div>
 
                 <br></br>
@@ -138,7 +136,7 @@ class BrowseMoviesUser extends Component {
                         Top-rated
                     </Button>
 
-                    <Button bsStyle="primary" onClick={()=> {this.getTopPlayedMoviesCurrentMonth()}}>
+                    <Button bsStyle="primary" style={{marginLeft:15}} onClick={()=> {this.getTopPlayedMoviesCurrentMonth()}}>
                         Top-plays
                     </Button>
 
@@ -150,7 +148,7 @@ class BrowseMoviesUser extends Component {
 
                 <div>
                 <Table striped bordered condensed hover responsive>
-                <thead>
+                <thead className="thead-dark">
                     <tr>
                     <th>Top Movies</th>
                     </tr>
@@ -169,11 +167,6 @@ class BrowseMoviesUser extends Component {
             <div className="col-sm-1"></div>
             </div>
 
-            
-
-            <div>
-                <Footer/>
-            </div>
             
   
         </div>

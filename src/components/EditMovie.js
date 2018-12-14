@@ -3,7 +3,6 @@ import {history} from '../utils/utils';
 import {Button} from 'react-bootstrap';
 import '../App.css';
 import AdminHeader from './AdminHeader';
-import Footer from './Footer';
 
 const editMovieUrl = 'http://localhost:8080/movies/editMovie';
 
@@ -143,47 +142,71 @@ class EditMovie extends Component {
 
         <form>
             <label>
-                <h3>Edit Movie:</h3>
+                <h1 className="text-muted">Edit {this.props.editMovieData.title}</h1>
                 <br></br>
                 <input type="text" name="title"
                     readOnly
                     value = {this.props.editMovieData.title}
                 />
 
+                <br></br>
+                <br></br>
+
                                 <input type="text" name="genre"
                     onChange= {(e)=>{this.editMovieData.genre=e.target.value}}
                     defaultValue = {this.props.editMovieData.genre}
                 />
+
+<br></br>
+                <br></br>
 
                                 <input type="text" name="year"
                     onChange= {(e)=>{this.editMovieData.year=e.target.value}}
                     defaultValue = {this.props.editMovieData.year}
                 />
 
+<br></br>
+                <br></br>
+
                                 <input type="text" name="studio"
                     onChange= {(e)=>{this.editMovieData.studio=e.target.value}}
                     defaultValue = {this.props.editMovieData.studio}
                 />
+
+<br></br>
+                <br></br>
 
                                 <input type="text" name="synopsis"
                     onChange= {(e)=>{this.editMovieData.synopsis=e.target.value}}
                     defaultValue = {this.props.editMovieData.synopsis}
                 />
 
+<br></br>
+                <br></br>
+
                                                 <input type="text" name="image_url"
                     onChange= {(e)=>{this.editMovieData.image_url=e.target.value}}
                     defaultValue = {this.props.editMovieData.image_url}
                 />
+
+<br></br>
+                <br></br>
 
                                                 <input type="text" name="movie_url"
                     onChange= {(e)=>{this.editMovieData.movie_url=e.target.value}}
                     defaultValue = {this.props.editMovieData.movie_url}
                 />
 
+<br></br>
+                <br></br>
+
                                                 <input type="text" name="actors"
                     onChange= {(e)=>{this.editMovieData.actors=e.target.value}}
                     defaultValue = {this.props.editMovieData.actors}
                 />
+
+<br></br>
+                <br></br>
 
                 
                 <input type="text" name="director"
@@ -191,11 +214,16 @@ class EditMovie extends Component {
                     defaultValue = {this.props.editMovieData.director}
                 />
 
+<br></br>
+                <br></br>
+
                 
                 <input type="text" name="country"
                     onChange= {(e)=>{this.editMovieData.country=e.target.value}}
                     defaultValue = {this.props.editMovieData.country}
                 />
+                                <br></br>
+                <br></br>
 
                 
                 <input type="text" name="rating"
@@ -203,11 +231,17 @@ class EditMovie extends Component {
                     defaultValue = {this.props.editMovieData.rating}
                 />
 
+<br></br>
+                <br></br>
+
                 
                 <input type="text" name="availability"
                     onChange= {(e)=>{this.editMovieData.availability=e.target.value}}
                     defaultValue = {this.props.editMovieData.availability}
                 />
+
+<br></br>
+                <br></br>
 
                 
                 <input type="text" name="price"
@@ -218,20 +252,17 @@ class EditMovie extends Component {
             </label>
             <br></br>
 
+            <br></br>
+
             <Button bsStyle="primary" onClick={()=> {this.handleEditMovie()}}>
                 Edit
             </Button>
 
-            <Button bsStyle="primary" onClick={()=> {this.handleCancelEditMovie()}}>
+            <Button bsStyle="primary" style={{marginLeft:15}} onClick={()=> {this.handleCancelEditMovie()}}>
                 Cancel
             </Button>
 
         </form>
-
-        
-        <div>
-            <Footer/>
-          </div>
 
       </div>
     );

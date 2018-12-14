@@ -52,6 +52,7 @@ html {
 
 .inp {
   width: 100%;
+  height: 38px;
   border: 2px solid;
   border-radius: 4px;
   padding-left: 7px;
@@ -126,4 +127,26 @@ html {
   padding-top: 2%;
   opacity: 0.8;
 
+}
+
+.left {
+
+  border-right: 1px solid;
+  
+}
+
+
+.main-user{
+height:600px;
+min-height: 800px;
+
+}
+
+#search-movie-form {
+  width: 100%;
+  
+}
+
+.admin-inputs {
+    margin-top: 2%;
 }

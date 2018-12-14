@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import AdminHeader from './AdminHeader';
-import Footer from './Footer';
 import {Button , Table} from 'react-bootstrap';
-//import {history} from '../utils/utils';
 import '../App.css';
 
 const headers = {
@@ -351,7 +349,7 @@ class BrowseMoviesAdmin extends Component {
             <br/>
             <br/>
 
-             <h1 className="text-muted">Search Movie:</h1>
+             <h1 className="text-muted">Search Movie</h1>
             <br></br>
 
             <form id="search-movie-form">
@@ -361,10 +359,10 @@ class BrowseMoviesAdmin extends Component {
                       <Button bsStyle="primary" onClick={()=> {this.handleSearchMoviePlaysDaily()}}>
                         Daily plays!
                       </Button>
-                      <Button bsStyle="primary" onClick={()=> {this.handleSearchMoviePlaysWeekly()}}>
+                      <Button bsStyle="primary" style={{marginLeft:15}} onClick={()=> {this.handleSearchMoviePlaysWeekly()}}>
                         Weekly plays!
                       </Button>
-                      <Button bsStyle="primary" onClick={()=> {this.handleSearchMoviePlaysMonthly()}}>
+                      <Button bsStyle="primary" style={{marginLeft:15}} onClick={()=> {this.handleSearchMoviePlaysMonthly()}}>
                         Monthly plays!
                       </Button>
 
@@ -376,13 +374,13 @@ class BrowseMoviesAdmin extends Component {
 
             <div>
                 <Table striped bordered condensed hover responsive>
-                <thead>
+                <thead className="thead-dark">
                     <tr>
                     <th>Plays</th>
                     </tr>
                 </thead>
                 <tbody>
-                {this.state.moviePlays.NoOfPlay}
+                <h3>{this.state.moviePlays.NoOfPlay}</h3>
                 </tbody>
                 </Table>
             </div>
@@ -392,18 +390,18 @@ class BrowseMoviesAdmin extends Component {
             <div>
 
                 <div>
-                    <h1 className="text-muted">View Top Movies</h1>
+                    <h1 className="text-muted">Top Movies</h1>
                 </div>
 
-                    <Button bsStyle="primary" onClick={()=> {this.handleGetTopMoviesDaily()}}>
+                    <Button bsStyle="primary" style={{width:85}} onClick={()=> {this.handleGetTopMoviesDaily()}}>
                         Daily
                     </Button>
 
-                    <Button bsStyle="primary" onClick={()=> {this.handleTopMoviesWeekly()}}>
+                    <Button bsStyle="primary" style={{marginLeft:15,width:85}} onClick={()=> {this.handleTopMoviesWeekly()}}>
                         Weekly
                     </Button>
 
-                    <Button bsStyle="primary" onClick={()=> {this.handleTopMoviesMonthly()}}>
+                    <Button bsStyle="primary" style={{marginLeft:15,width:85}} onClick={()=> {this.handleTopMoviesMonthly()}}>
                         Monthly
                     </Button>
 
@@ -414,7 +412,7 @@ class BrowseMoviesAdmin extends Component {
 
             <div>
                 <Table striped bordered condensed hover responsive>
-                <thead>
+                <thead className="thead-dark">
                     <tr>
                     <th>Top Movies</th>
                     </tr>
@@ -432,13 +430,7 @@ class BrowseMoviesAdmin extends Component {
           <div className="col-sm-1"></div>
         </div>
 
-            
-
-            <div>
-                <Footer/>
-            </div>
-            
-  
+          
         </div>
 
       );

@@ -657,6 +657,13 @@ class UserMovies extends Component {
               <Button bsStyle="primary" onClick={()=> {this.handleFilterMovies()}}>
                     Filter
               </Button>
+
+              <Button bsStyle="primary" onClick={()=> {
+                                  this.state.errors=[];
+                                  this.setState({messageType:"alert-alert-light"})
+                                  this.get_user_inventory()}} style={{marginLeft:10}}>
+                                      Clear
+              </Button>
                         
               <br></br>
               <br></br>
@@ -677,9 +684,6 @@ class UserMovies extends Component {
 
             <br/><br/>
 
-            <div>
-                <FooterMainPage/>
-            </div>
             
   
         </div>

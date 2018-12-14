@@ -522,7 +522,7 @@ class AdminMovies extends Component {
    
     return (
         <div>
-              <Table className = "table table-striped" striped bordered condensed hover responsive style={{width: "80.5%", marginLeft: "10%"}}>
+              <Table className = "table table-striped" striped bordered condensed hover responsive style={{width: "98%", marginLeft: "1%"}}>
                 <thead className="thead-dark">
                     <tr>
                     <th>Title</th>
@@ -576,7 +576,229 @@ class AdminMovies extends Component {
                 <AdminHeader/>
             </div>
 
-            <div className="col-sm-1"></div>
+            <div className="row main-user" style={{padding: 0, width: '100%'}}>
+              
+                <div className="col-sm-3 left" style={{width: '100%'}}>
+                    <div className="row" style={{paddingLeft: 0, width: '100%'}}>
+                  <form id="search-movie-form" style={{marginTop: 20}}>
+                        <div className="container-fluid">
+
+                        <div style={{marginLeft:10}} className={this.state.messageType}>
+
+                          {errors}
+
+                        </div>
+                          <div className="row">
+                              <div className="col-sm-9">
+                                  <input name="keyword" className="inp" placeholder ="Enter keyword" required = {true} onChange= {(e)=>{this.keywordSearchMovie.keyword=e.target.value}}/> 
+                              </div>
+
+                              <div className="col-sm-3">
+                                  <Button bsStyle="primary" onClick={()=> {this.handleKeywordSearchMovies()}} style={{height: 38}}>
+                                    Search Movie
+                                  </Button>
+                              </div>
+                          
+                          </div> 
+                        </div>
+                      </form>
+
+                      <form id="filter-movie-form" style={{marginTop: 30}}>
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-md-9 admin-inputs">
+
+                                    <input name="synopsis" className="inp" placeholder ="Filter on stars" onChange= {(e)=>{this.filterSearchMovie.stars=e.target.value}}/>
+                                </div>
+
+                                <div className="col-md-3">
+                                    <div className="form-check">
+                                      <input className="form-check-input" type="checkbox" onChange={() => this.checkStarsFilter()} style={{width: 17,height: 17}}/>
+                                      <label className="form-check-label">
+                                        Stars
+                                      </label>
+                                    </div>
+                                </div>
+                            
+                                <div className="col-md-9 admin-inputs">
+
+                                    <input name="actors" className="inp" placeholder ="Filter on actors" onChange= {(e)=>{this.filterSearchMovie.actors=e.target.value}}/>
+
+                                </div>
+
+                                <div className="col-md-3">
+                                    <div className="form-check">
+                                      <input className="form-check-input" type="checkbox" onChange={() => this.checkActorsFilter()} style={{width: 17,height: 17}}/>
+                                      <label className="form-check-label">
+                                        Actors
+                                      </label>
+                                    </div>
+                                </div>
+
+
+                            
+                            
+                            <div className="col-md-9 admin-inputs">
+
+                                <input name="director" className="inp" placeholder ="Filter on director" onChange= {(e)=>{this.filterSearchMovie.director=e.target.value}}/>
+
+
+                            </div>
+
+                                <div className="col-md-3">
+                                    <div className="form-check">
+                                      <input className="form-check-input" type="checkbox" onChange={() => this.checkDirectorFilter()} style={{width: 17,height: 17}}/>
+                                      <label className="form-check-label">
+                                        Director
+                                      </label>
+                                    </div>
+                                </div>
+
+                          
+                            <div className="col-md-9 admin-inputs">
+
+                            <input name="genre" className="inp" placeholder ="Filter on genre" onChange= {(e)=>{this.filterSearchMovie.genre=e.target.value}}/>
+
+                                </div>
+
+                                <div className="col-md-3">
+                                <div className="form-check">
+                                      <input className="form-check-input" type="checkbox" onChange={() => this.checkGenreFilter()} style={{width: 17,height: 17}}/>
+                                      <label className="form-check-label">
+                                        Genre
+                                      </label>
+                                    </div>
+                                </div>
+
+                            
+                            <div className="col-md-9 admin-inputs">
+
+                            <input name="year" className="inp" placeholder ="Filter on year" onChange= {(e)=>{this.filterSearchMovie.year=e.target.value}}/>
+
+                                </div>
+
+                                <div className="col-md-3">
+                                <div className="form-check">
+                                      <input className="form-check-input" type="checkbox" onChange={() => this.checkYearFilter()} style={{width: 17,height: 17}}/>
+                                      <label className="form-check-label">
+                                        Year
+                                      </label>
+                                    </div>
+                                </div>
+
+                        
+
+                            <div className="col-md-9 admin-inputs">
+                            <input name="mpaa_rating" className="inp" placeholder ="Filter on MPAA rating" onChange= {(e)=>{this.filterSearchMovie.mpaa_rating=e.target.value}}/>
+
+                                </div>
+
+                                <div className="col-md-3">
+                                <div className="form-check">
+                                      <input className="form-check-input" type="checkbox" onChange={() => this.checkRatingFilter()} style={{width: 17,height: 17}}/>
+                                      <label className="form-check-label">
+                                        MPAA_Rating
+                                      </label>
+                                    </div>
+                                </div>
+                                <br/>
+                              <div className="row" style={{marginTop: 15}}>
+                                <Button bsStyle="primary" onClick={()=> {this.handleFilterMovies()}}>
+                                      Filter
+                                </Button>
+
+                                <Button bsStyle="primary" onClick={()=> {
+                                  this.state.errors=[];
+                                  this.setState({messageType:"alert-alert-light"})
+                                  this.get_admin_inventory()}} style={{marginLeft:10}}>
+                                      Clear
+                                </Button>
+
+                              </div>
+
+
+                              <div className="row" style={{marginTop: 15}}>
+
+                                <Button bsStyle="primary" data-toggle="modal" data-target="#addMovieModal" style={{marginleft:15}}>
+                                  Add Movie
+                              </Button>
+
+
+
+
+                              </div>
+                                
+
+                            <br></br>
+
+                            <div style = {{float:'right'}}>
+
+                            </div>
+              
+                              </div>
+
+                          </div>
+                        </form>
+
+
+
+                        <br/>
+
+
+
+
+                        <div class="modal fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Movie!</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+
+                                <div>
+                                  <AddMovie handleAddMovie = {this.handleAddMovie.bind(this)}/> 
+                                </div>
+
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+              
+              <div className="col-sm-9 right">
+                  <div className="container-fluid">
+                        
+                      {this.getPaginatedTable()}
+                        
+                  </div>
+              </div>
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* <div className="col-sm-1"></div>
 
             <div className="container">
 
@@ -589,144 +811,12 @@ class AdminMovies extends Component {
             </div>
 
             
-            <div>
-                  <AddMovie handleAddMovie = {this.handleAddMovie.bind(this)}/> 
-            </div>
-
-
-              <br></br>
-              <br></br>
-
-            <form id="search-movie-form">
-              <div className="container-fluid">
-                  <div className="row">
-
-                      <div className="col-md-11">
-
-                        <input name="keyword" className="inp" placeholder ="Enter keyword" required = {true} onChange= {(e)=>{this.keywordSearchMovie.keyword=e.target.value}}/> 
-                        
-                      </div>
-
-                      <Button bsStyle="primary" onClick={()=> {this.handleKeywordSearchMovies()}}>
-                        Search
-                      </Button>
-                      
-                    </div>
-
-              </div>
-            </form>
-
-            <br></br>
-            <br></br>
-
-
-
             
-            <form id="filter-movie-form">
-              <div className="container-fluid">
-                  <div className="row">
 
-
-                  <div className="col-md-2">
-
-                  <input name="synopsis" className="inp" placeholder ="Filter on stars" onChange= {(e)=>{this.filterSearchMovie.stars=e.target.value}}/>
-
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" onChange={() => this.checkStarsFilter()}/>
-                            <label className="form-check-label">
-                              Stars
-                            </label>
-                          </div>
-                  </div>
-
-
-                  <div className="col-md-2 ">
-
-                  <input name="actors" className="inp" placeholder ="Filter on actors" onChange= {(e)=>{this.filterSearchMovie.actors=e.target.value}}/>
-
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" onChange={() => this.checkActorsFilter()}/>
-                            <label className="form-check-label">
-                              Actors
-                            </label>
-                          </div>
-                  </div>
-
-
-                  <div className="col-md-2">
-                  <input name="director" className="inp" placeholder ="Filter on director" onChange= {(e)=>{this.filterSearchMovie.director=e.target.value}}/>
-
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" onChange={() => this.checkDirectorFilter()}/>
-                            <label className="form-check-label">
-                              Director
-                            </label>
-                          </div>
-
-                  </div>
-
-                  <div className="col-md-2">
-
-                  <input name="genre" className="inp" placeholder ="Filter on genre" onChange= {(e)=>{this.filterSearchMovie.genre=e.target.value}}/>
-
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" onChange={() => this.checkGenreFilter()}/>
-                            <label className="form-check-label">
-                              Genre
-                            </label>
-                          </div>
-                  </div>
-
-
-                  <div className="col-md-2">
-                  <input name="year" className="inp" placeholder ="Filter on year" onChange= {(e)=>{this.filterSearchMovie.year=e.target.value}}/>
-
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" onChange={() => this.checkYearFilter()}/>
-                            <label className="form-check-label">
-                              Year
-                            </label>
-                          </div>
-                  </div>
-
-
-                  <div className="col-md-2">
-
-                  <input name="mpaa_rating" className="inp" placeholder ="Filter on MPAA rating" onChange= {(e)=>{this.filterSearchMovie.mpaa_rating=e.target.value}}/>
-
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" onChange={() => this.checkRatingFilter()}/>
-                            <label className="form-check-label">
-                              MPAA_Rating
-                            </label>
-                          </div>
-
-                  </div>
-
-                  <br></br>
-
-                  <div style = {{float:'right'}}>
-
-                  </div>
-    
-                    </div>
-
-                </div>
-            </form>
-
-              <Button bsStyle="primary" onClick={()=> {this.handleFilterMovies()}}>
-                    Filter
-              </Button>
-                        
-              <br></br>
-              <br></br>
-
-                            <br></br>
-              <br></br>
 
               
 
-              <div>
+            <div>
 
                 {this.getPaginatedTable()}
 
@@ -735,7 +825,7 @@ class AdminMovies extends Component {
             <br></br>
 
 
-            <div><FooterMainPage/> </div>
+            <div><FooterMainPage/> </div> */}
         </div>
 
       );
