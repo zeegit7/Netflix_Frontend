@@ -425,7 +425,7 @@ class UserMovies extends Component {
     
               <td>{inventoryItem.rating}</td>
 
-              <td>{inventoryItem.avgStars}</td>
+              <td>{inventoryItem.avgStars.slice(0,3)}</td>
 
               <td>${inventoryItem.price}</td>
     

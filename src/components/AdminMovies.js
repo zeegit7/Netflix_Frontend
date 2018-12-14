@@ -476,7 +476,7 @@ class AdminMovies extends Component {
     
               <td>{inventoryItem.rating}</td>
 
-              <td>{inventoryItem.avgStars}</td>
+              <td>{inventoryItem.avgStars.slice(0,3)}</td>
 
               <td>${inventoryItem.price}</td>
 
@@ -770,24 +770,18 @@ class AdminMovies extends Component {
 
 
 
-                        <div class="modal fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                              <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Add Movie!</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                                </button>
-                              </div>
-                              <div class="modal-body">
+                        <div className="modal fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div className="modal-dialog" role="document">
+                            <div className="modal-content">
+                              <div className="modal-body">
 
                                 <div>
                                   <AddMovie handleAddMovie = {this.handleAddMovie.bind(this)}/> 
                                 </div>
 
                               </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                               </div>
                             </div>
                           </div>
@@ -810,45 +804,6 @@ class AdminMovies extends Component {
 
             </div>
 
-
-
-
-
-
-
-
-
-
-
-
-            {/* <div className="col-sm-1"></div>
-
-            <div className="container">
-
-              <div className={this.state.messageType}>
-
-                {errors}
-
-              </div>
-
-            </div>
-
-            
-            
-
-
-              
-
-            <div>
-
-                {this.getPaginatedTable()}
-
-            </div>
-
-            <br></br>
-
-
-            <div><FooterMainPage/> </div> */}
         </div>
 
       );

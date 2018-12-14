@@ -10,7 +10,7 @@ const Error = () => {
       <br></br>
       <br></br>
 
-      <h1> Go back to application <a href="http://localhost:3000/">here</a></h1>
+      <h1> Go back to application <a href="https://netflix-cmpe275.herokuapp.com/">here</a></h1>
     </div>
   );
 };
