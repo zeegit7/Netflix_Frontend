@@ -157,7 +157,7 @@ class EditMovie extends Component {
                     defaultValue = {this.props.editMovieData.genre}
                 />
 
-<br></br>
+                <br></br>
                 <br></br>
 
                                 <input type="text" name="year"
@@ -165,7 +165,7 @@ class EditMovie extends Component {
                     defaultValue = {this.props.editMovieData.year}
                 />
 
-<br></br>
+                <br></br>
                 <br></br>
 
                                 <input type="text" name="studio"
@@ -173,7 +173,7 @@ class EditMovie extends Component {
                     defaultValue = {this.props.editMovieData.studio}
                 />
 
-<br></br>
+                <br></br>
                 <br></br>
 
                                 <input type="text" name="synopsis"
@@ -181,31 +181,16 @@ class EditMovie extends Component {
                     defaultValue = {this.props.editMovieData.synopsis}
                 />
 
-<br></br>
+                <br></br>
                 <br></br>
 
-                                                <input type="text" name="image_url"
-                    onChange= {(e)=>{this.editMovieData.image_url=e.target.value}}
-                    defaultValue = {this.props.editMovieData.image_url}
-                />
-
-<br></br>
-                <br></br>
-
-                                                <input type="text" name="movie_url"
-                    onChange= {(e)=>{this.editMovieData.movie_url=e.target.value}}
-                    defaultValue = {this.props.editMovieData.movie_url}
-                />
-
-<br></br>
-                <br></br>
 
                                                 <input type="text" name="actors"
                     onChange= {(e)=>{this.editMovieData.actors=e.target.value}}
                     defaultValue = {this.props.editMovieData.actors}
                 />
 
-<br></br>
+                <br></br>
                 <br></br>
 
                 
@@ -214,7 +199,7 @@ class EditMovie extends Component {
                     defaultValue = {this.props.editMovieData.director}
                 />
 
-<br></br>
+                <br></br>
                 <br></br>
 
                 
@@ -231,7 +216,7 @@ class EditMovie extends Component {
                     defaultValue = {this.props.editMovieData.rating}
                 />
 
-<br></br>
+                <br></br>
                 <br></br>
 
                 
@@ -240,7 +225,7 @@ class EditMovie extends Component {
                     defaultValue = {this.props.editMovieData.availability}
                 />
 
-<br></br>
+                <br></br>
                 <br></br>
 
                 
