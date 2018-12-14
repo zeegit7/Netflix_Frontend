@@ -588,10 +588,35 @@ class AdminMovies extends Component {
                           {errors}
 
                         </div>
+
+                        <div >
+
+                          
+                        <Button bsStyle="primary" data-toggle="modal" data-target="#addMovieModal" style={{width:'100%', marginLeft:40}}>
+                                  Add Movie
+                              </Button>
+
+                              <br>
+                              </br>
+
+                              
+                              <br>
+                              </br>
+
+                              <br>
+                              </br>
+
+                          
+                        </div>
+
+
+
                           <div className="row">
                               <div className="col-sm-9">
                                   <input name="keyword" className="inp" placeholder ="Enter keyword" required = {true} onChange= {(e)=>{this.keywordSearchMovie.keyword=e.target.value}}/> 
                               </div>
+
+
 
                               <div className="col-sm-3">
                                   <Button bsStyle="primary" onClick={()=> {this.handleKeywordSearchMovies()}} style={{height: 38}}>
@@ -719,9 +744,7 @@ class AdminMovies extends Component {
 
                               <div className="row" style={{marginTop: 15}}>
 
-                                <Button bsStyle="primary" data-toggle="modal" data-target="#addMovieModal" style={{marginleft:15}}>
-                                  Add Movie
-                              </Button>
+
 
 
 
