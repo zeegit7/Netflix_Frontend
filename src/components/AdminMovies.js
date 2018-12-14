@@ -583,7 +583,7 @@ class AdminMovies extends Component {
                   <form id="search-movie-form" style={{marginTop: 20}}>
                         <div className="container-fluid">
 
-                        <div style={{marginLeft:10}} className={this.state.messageType}>
+                        <div style={{marginLeft:40,width:'100%'}} className={this.state.messageType}>
 
                           {errors}
 
