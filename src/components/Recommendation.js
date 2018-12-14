@@ -105,7 +105,7 @@ class Recommendation extends Component {
                 <Table striped bordered condensed hover responsive>
                 <thead className="thead-dark">
                     <tr>
-                    <th>Recommended Movies</th>
+                    <th>Recommended based on your recent views</th>
                     </tr>
                 </thead>
                 <tbody>

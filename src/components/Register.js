@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {history} from '../utils/utils';
 import {Label, Button} from 'react-bootstrap';
 import RegisterHeader from './RegisterHeader';
-import Footer from './Footer';
 import '../App.css';
 
 var registrationUrl = 'http://localhost:8080/user/register';
@@ -121,6 +120,8 @@ class Register extends Component {
                 history.push("/login");
               }
             else{
+                this.state.errors.push("User already registered. Please login!")
+                this.setState({})
                 console.log("Registration error!!")
 
               }
