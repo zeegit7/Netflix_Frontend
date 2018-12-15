@@ -34,11 +34,18 @@ class Facebook extends Component {
     firebase.auth().onAuthStateChanged(user => {
       this.setState({ isSignedIn: !!user })
       console.log("user", user)
-      this.facebookRegistrationCreds.name=user.displayName;
-      this.facebookRegistrationCreds.email=user.email;
-      console.log(this.facebookRegistrationCreds.name)
-      console.log(this.facebookRegistrationCreds.email)
-      this.handleRegister();
+      try{
+
+        this.facebookRegistrationCreds.name=user.displayName;
+        this.facebookRegistrationCreds.email=user.email;
+        console.log(this.facebookRegistrationCreds.name)
+        console.log(this.facebookRegistrationCreds.email)
+        this.handleRegister();
+
+      }catch(err){
+        console.log(err);
+      }
+
     })
   }
 
