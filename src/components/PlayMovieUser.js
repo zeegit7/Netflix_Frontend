@@ -5,13 +5,13 @@ import Footer from './Footer';
 import {history} from '../utils/utils';
 import {Label, Button, Jumbotron } from 'react-bootstrap';
 import '../App.css';
-const reviewUrl = 'http://localhost:8080/movies/insertReview';
+const reviewUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/insertReview';
 const headers = {
   'Accept': 'application/json'
 };
-var getPaymentDueUrl = 'http://localhost:8080/movies/findPrice/';
-var playMovieUrl = 'http://localhost:8080/movies/play/';
-var makePaymentUrl = 'http://localhost:8080/payPerView/payForPayPerView'
+var getPaymentDueUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/findPrice/';
+var playMovieUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/play/';
+var makePaymentUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/payPerView/payForPayPerView'
 
 
 
@@ -72,7 +72,7 @@ class PlayMovieUser extends Component {
               return err;
               });
               
-              playMovieUrl = 'http://localhost:8080/movies/play/'
+              playMovieUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/play/'
       }
 
 
@@ -160,7 +160,7 @@ class PlayMovieUser extends Component {
               return err;
               });
 
-      getPaymentDueUrl = 'http://localhost:8080/movies/findPrice/';
+      getPaymentDueUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/findPrice/';
 
       }
 

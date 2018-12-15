@@ -6,7 +6,7 @@ const headers = {
   'Accept': 'application/json'
 };
 
-const facebookRegistrationUrl = 'http://localhost:8080/user/loginsocial';
+const facebookRegistrationUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/loginsocial';
 
 firebase.initializeApp({
   apiKey: "AIzaSyD_BERG4LGWOsgR1xMeFBNvu7SRuie3GzI",

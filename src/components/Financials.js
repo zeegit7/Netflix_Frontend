@@ -9,13 +9,13 @@ const headers = {
 };
 
 
-var uniqueSubscriptionUsersUrl = 'http://localhost:8080/subscription/uniqueSubscription/';
-var uniquePpvUsersUrl = 'http://localhost:8080/payPerView/uniquePayPerViewUser/';
-var uniqueActiveUsersUrl = 'http://localhost:8080/userDetails/totalUniqueActiveUser/';
-var uniqueRegisteredUsersUrl = 'http://localhost:8080/userDetails/totalUniqueUser/';
-var monthlySubscriptionIncomeUrl = 'http://localhost:8080/transaction/totalSubscriptionIncome/';
-var monthlyPpvIncomeUrl = 'http://localhost:8080/transaction/payPerViewIncome/';
-var monthlyTotalIncomeUrl = 'http://localhost:8080/transaction/totalIncome/';
+var uniqueSubscriptionUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/subscription/uniqueSubscription/';
+var uniquePpvUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/payPerView/uniquePayPerViewUser/';
+var uniqueActiveUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/userDetails/totalUniqueActiveUser/';
+var uniqueRegisteredUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/userDetails/totalUniqueUser/';
+var monthlySubscriptionIncomeUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/transaction/totalSubscriptionIncome/';
+var monthlyPpvIncomeUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/transaction/payPerViewIncome/';
+var monthlyTotalIncomeUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/transaction/totalIncome/';
 
 class Financials extends Component {
 
@@ -114,7 +114,7 @@ class Financials extends Component {
                 });
 
 
-        uniqueSubscriptionUsersUrl = 'http://localhost:8080/payPerView/uniquePayPerViewUser/';
+        uniqueSubscriptionUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/payPerView/uniquePayPerViewUser/';
 
     }
 
@@ -146,7 +146,7 @@ class Financials extends Component {
                 });
 
 
-        uniquePpvUsersUrl = 'http://localhost:8080/subscription/uniqueSubscription/';
+        uniquePpvUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/ubscription/uniqueSubscription/';
       
     }
 
@@ -178,7 +178,7 @@ class Financials extends Component {
                 });
 
 
-        uniqueActiveUsersUrl = 'http://localhost:8080/userDetails/totalUniqueActiveUser/';
+        uniqueActiveUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/userDetails/totalUniqueActiveUser/';
    
     }
 
@@ -210,7 +210,7 @@ class Financials extends Component {
                 });
 
 
-        uniqueRegisteredUsersUrl = 'http://localhost:8080/userDetails/totalUniqueUser/';
+        uniqueRegisteredUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/userDetails/totalUniqueUser/';
 
 
         
@@ -243,7 +243,7 @@ class Financials extends Component {
                 return err;
                 });
 
-        monthlySubscriptionIncomeUrl = 'http://localhost:8080/transaction/totalSubscriptionIncome/';
+        monthlySubscriptionIncomeUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/transaction/totalSubscriptionIncome/';
         
     }
 
@@ -274,7 +274,7 @@ class Financials extends Component {
                 return err;
                 });
 
-        monthlyPpvIncomeUrl = 'http://localhost:8080/transaction/payPerViewIncome/';
+        monthlyPpvIncomeUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/transaction/payPerViewIncome/';
 
 
         
@@ -308,7 +308,7 @@ class Financials extends Component {
                 });
 
 
-        monthlyTotalIncomeUrl = 'http://localhost:8080/transaction/totalIncome/';
+        monthlyTotalIncomeUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/transaction/totalIncome/';
 
 
         

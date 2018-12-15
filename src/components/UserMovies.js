@@ -20,11 +20,11 @@ var director = '';
 var ratingUrl = '';
 var rating = '';
 
-const getUserInventoryUrl = 'http://localhost:8080/movies/getAllMovies';
+const getUserInventoryUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/getAllMovies';
 
-var filterMoviesUrl = 'http://localhost:8080/movies/filter?year='+year+'&avgStars='+avgStars+genreUrl+genre+actorsUrl+actors+directorUrl+director+ratingUrl+rating;
+var filterMoviesUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/filter?year='+year+'&avgStars='+avgStars+genreUrl+genre+actorsUrl+actors+directorUrl+director+ratingUrl+rating;
 
-var keywordSearchMovieUrl = 'http://localhost:8080/movies/search/';
+var keywordSearchMovieUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/search/';
 
 class UserMovies extends Component {
 
@@ -157,7 +157,7 @@ class UserMovies extends Component {
                     return err;
                     });
 
-          keywordSearchMovieUrl = 'http://localhost:8080/movies/search/';
+          keywordSearchMovieUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/search/';
 
       }
 
@@ -167,7 +167,7 @@ class UserMovies extends Component {
 
         console.log("Filter Search clicked")
 
-        filterMoviesUrl = 'http://localhost:8080/movies/filter?year='+year+'&avgStars='+avgStars+genreUrl+genre+actorsUrl+actors+directorUrl+director+ratingUrl+rating;
+        filterMoviesUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/filter?year='+year+'&avgStars='+avgStars+genreUrl+genre+actorsUrl+actors+directorUrl+director+ratingUrl+rating;
 
         console.log("filterMoviesUrl",filterMoviesUrl);
 

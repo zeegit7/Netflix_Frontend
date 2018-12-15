@@ -7,11 +7,11 @@ const headers = {
 };
 
 
-var searchUserHistoryUrl = 'http://localhost:8080/user/movieHistorys/';
+var searchUserHistoryUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/movieHistorys/';
 
-var searchUserUrl = 'http://localhost:8080/userDetails/';
+var searchUserUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/userDetails/';
 
-var getTopUsersUrl = 'http://localhost:8080/user/topTenUser/';
+var getTopUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/topTenUser/';
 
 class BrowseUsers extends Component {
 
@@ -68,7 +68,7 @@ class BrowseUsers extends Component {
                 });
 
 
-        searchUserUrl = 'http://localhost:8080/userDetails/';
+        searchUserUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/userDetails/';
 
         this.setState({userMovieHistory:[]})
 
@@ -101,7 +101,7 @@ class BrowseUsers extends Component {
                 return err;
                 });
 
-                searchUserHistoryUrl = 'http://localhost:8080/user/movieHistorys/';
+                searchUserHistoryUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/movieHistorys/';
 
 
     }
@@ -135,7 +135,7 @@ class BrowseUsers extends Component {
                         });
 
 
-        getTopUsersUrl = 'http://localhost:8080/user/topTenUser/';
+        getTopUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/topTenUser/';
 
 
     }
@@ -171,7 +171,7 @@ class BrowseUsers extends Component {
                         });
 
 
-        getTopUsersUrl = 'http://localhost:8080/user/topTenUser/';
+        getTopUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/topTenUser/';
 
         
     }
@@ -205,7 +205,7 @@ class BrowseUsers extends Component {
                         });
 
 
-        getTopUsersUrl = 'http://localhost:8080/user/topTenUser/';
+        getTopUsersUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/topTenUser/';
         
         
     }

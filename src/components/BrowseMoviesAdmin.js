@@ -7,8 +7,8 @@ const headers = {
     'Accept': 'application/json'
   };
 
-var getTopMoviesUrl = 'http://localhost:8080/user/topTenMovies/';
-var searchMoviePlaysUrl = 'http://localhost:8080/user/';
+var getTopMoviesUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/topTenMovies/';
+var searchMoviePlaysUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/';
 
 class BrowseMoviesAdmin extends Component {
 
@@ -84,7 +84,7 @@ class BrowseMoviesAdmin extends Component {
                 });
 
 
-                searchMoviePlaysUrl = 'http://localhost:8080/user/';
+                searchMoviePlaysUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/';
 
     } 
 
@@ -135,7 +135,7 @@ class BrowseMoviesAdmin extends Component {
                 });
 
 
-                searchMoviePlaysUrl = 'http://localhost:8080/user/';
+                searchMoviePlaysUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/';
 
 
     } 
@@ -187,7 +187,7 @@ class BrowseMoviesAdmin extends Component {
                 });
 
 
-                searchMoviePlaysUrl = 'http://localhost:8080/user/';
+                searchMoviePlaysUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/';
 
     } 
 
@@ -224,7 +224,7 @@ class BrowseMoviesAdmin extends Component {
                         });
 
 
-            getTopMoviesUrl = 'http://localhost:8080/user/topTenMovies/';
+            getTopMoviesUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/topTenMovies/';
 
             this.setState({moviePlays:{}})
 
@@ -259,7 +259,7 @@ class BrowseMoviesAdmin extends Component {
                 });
 
 
-                getTopMoviesUrl = 'http://localhost:8080/user/topTenMovies/';
+                getTopMoviesUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/topTenMovies/';
 
 
 
@@ -295,7 +295,7 @@ class BrowseMoviesAdmin extends Component {
 
 
 
-                getTopMoviesUrl = 'http://localhost:8080/user/topTenMovies/';
+                getTopMoviesUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/topTenMovies/';
 
 
 

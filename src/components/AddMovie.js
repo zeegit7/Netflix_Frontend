@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../App.css'
 import {Button} from 'react-bootstrap';
 
-const addMovieUrl= 'http://localhost:8080/movies/addMovie';
+const addMovieUrl= 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/addMovie';
 const headers = {
     'Accept': 'application/json'
 };

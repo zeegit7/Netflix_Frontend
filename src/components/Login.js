@@ -38,7 +38,7 @@ class Login extends Component {
 
         this.state.errors=[];
 
-        var loginUrl = 'http://localhost:8080/user/login?email='+this.loginCredentials.email+'&password='+this.loginCredentials.password;
+        var loginUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/login?email='+this.loginCredentials.email+'&password='+this.loginCredentials.password;
 
         console.log("Login attempted");
 

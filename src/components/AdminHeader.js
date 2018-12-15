@@ -7,7 +7,7 @@ const headers = {
   'Accept': 'application/json'
 };
 
-const logoutUrl = 'http://localhost:8080/user/logout';
+const logoutUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/logout';
 
 
 

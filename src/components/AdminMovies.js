@@ -19,13 +19,13 @@ var director = '';
 var ratingUrl = '';
 var rating = '';
 
-const getAdminInventoryUrl = 'http://localhost:8080/movies/getAllMovies';
+const getAdminInventoryUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/getAllMovies';
 
-var keywordSearchMovieUrl = 'http://localhost:8080/movies/search/';
+var keywordSearchMovieUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/search/';
 
-var deleteMovieUrl = 'http://localhost:8080/movies/delMovie/';
+var deleteMovieUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/delMovie/';
 
-var filterMoviesUrl = 'http://localhost:8080/movies/filter?year='+year+'&avgStars='+avgStars+genreUrl+genre+actorsUrl+actors+directorUrl+director+ratingUrl+rating;
+var filterMoviesUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/filter?year='+year+'&avgStars='+avgStars+genreUrl+genre+actorsUrl+actors+directorUrl+director+ratingUrl+rating;
 
 
 class AdminMovies extends Component {
@@ -117,7 +117,7 @@ class AdminMovies extends Component {
                     return err;
                     });
 
-          keywordSearchMovieUrl = 'http://localhost:8080/movies/search/';
+          keywordSearchMovieUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/search/';
 
       }
 
@@ -127,7 +127,7 @@ class AdminMovies extends Component {
 
         console.log("Filter Search clicked")
 
-        filterMoviesUrl = 'http://localhost:8080/movies/filter?year='+year+'&avgStars='+avgStars+genreUrl+genre+actorsUrl+actors+directorUrl+director+ratingUrl+rating;
+        filterMoviesUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/filter?year='+year+'&avgStars='+avgStars+genreUrl+genre+actorsUrl+actors+directorUrl+director+ratingUrl+rating;
 
         console.log("filterMoviesUrl",filterMoviesUrl);
 
@@ -281,7 +281,7 @@ class AdminMovies extends Component {
                     return err;
                     });
 
-            deleteMovieUrl = 'http://localhost:8080/movies/delMovie/';
+            deleteMovieUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/delMovie/';
 
       }
 

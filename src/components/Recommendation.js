@@ -9,7 +9,7 @@ const headers = {
 };
 
 
-const getRecommendationsUrl = 'http://localhost:8080/movies/recommendation';
+const getRecommendationsUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/recommendation';
 
 
 class Recommendation extends Component {

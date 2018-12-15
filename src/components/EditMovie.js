@@ -4,7 +4,7 @@ import {Button} from 'react-bootstrap';
 import '../App.css';
 import AdminHeader from './AdminHeader';
 
-const editMovieUrl = 'http://localhost:8080/movies/editMovie';
+const editMovieUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/movies/editMovie';
 
 
 const headers = {
