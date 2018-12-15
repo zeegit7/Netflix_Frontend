@@ -4,7 +4,7 @@ import {Label, Button} from 'react-bootstrap';
 import RegisterHeader from './RegisterHeader';
 import '../App.css';
 
-var registrationUrl = '//ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/register';
+var registrationUrl = 'http://ec2-52-53-167-184.us-west-1.compute.amazonaws.com:8080/user/register';
 
 const headers = {
     'Accept': 'application/json'
