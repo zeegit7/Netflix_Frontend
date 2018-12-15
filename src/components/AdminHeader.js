@@ -13,6 +13,14 @@ const logoutUrl = 'http://localhost:8080/user/logout';
 
 class AdminHeader extends Component {
 
+  constructor(){
+
+    super();
+  
+    this.handlefacebookLogout = this.handlefacebookLogout.bind(this);
+  
+  }
+
   handlefacebookLogout(){
     console.log("logout attempted")
     firebase.auth().signOut();

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DashboardHeader from './DashboardHeader';
-import Footer from './Footer';
 import '../App.css';
 
 

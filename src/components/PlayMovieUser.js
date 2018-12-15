@@ -243,9 +243,7 @@ class PlayMovieUser extends Component {
 
                             </div>
 
-                          {/* <b>{this.messageToShow}</b><a href = 'http://localhost:3000/pay' onClick={()=> {this.makeMoviePayment()}}> <b>{this.secondaryMessageToShow}</b></a> */}
-                          {/* <br></br>
-                          <br></br> */}
+ 
 
                         </div>
 
@@ -347,14 +345,14 @@ class PlayMovieUser extends Component {
                                   
                                   <b>Subscribed Users</b> : Play <b>Free</b>, <b>SubscriptionOnly</b> and <b>Paid</b> movies without paying a penny.
                                   <br></br>
-                                        Check subscription <a href = 'http://localhost:3000/subscription'>here</a>.
+                                        Check subscription <a href = 'https://netflix-cmpe275.herokuapp.com/subscription'>here</a>.
 
                                         <br></br>
                                         <br></br>
 
                                         
 
-                                    <b>Non-subscribed</b> users, please subscribe <a href = 'http://localhost:3000/subscription'>here</a> to avail all the above benefits.
+                                    <b>Non-subscribed</b> users, please subscribe <a href = 'https://netflix-cmpe275.herokuapp.com/subscription'>here</a> to avail all the above benefits.
                                     <br></br>
 
                               </p>
