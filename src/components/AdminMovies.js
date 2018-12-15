@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AdminHeader from './AdminHeader';
-import FooterMainPage from './FooterMainPage';
 import AddMovie from './AddMovie';
 import {Button , Table} from 'react-bootstrap';
 import '../App.css';

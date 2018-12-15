@@ -81,7 +81,7 @@ class AddMovie extends Component {
             console.log("All fields are mandatory!");
         }
 
-        if(this.newMovie.availability != "Free" && this.newMovie.availability != "Paid" && this.newMovie.availability != "PayPerView" && this.newMovie.availability != "SubscriptionOnly" ){
+        if(this.newMovie.availability !== "Free" && this.newMovie.availability !== "Paid" && this.newMovie.availability !== "PayPerView" && this.newMovie.availability !== "SubscriptionOnly" ){
             this.state.errors.push("Invalid Availability!");
         }
 

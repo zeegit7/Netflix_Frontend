@@ -32,8 +32,8 @@ class Recommendation extends Component {
 
     getRecommendedMovies(){
 
-        console.log("getRecommendedMovies")
-        
+        console.log("getRecommendedMovies");
+
                 fetch(`${getRecommendationsUrl}`, {
                     method: 'GET',
                     credentials:'include',

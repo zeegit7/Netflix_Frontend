@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import {history} from '../utils/utils';
+import firebase from "firebase";
 
 const headers = {
   'Accept': 'application/json'
@@ -8,9 +9,21 @@ const headers = {
 
 const logoutUrl = 'http://localhost:8080/user/logout';
 
-
-
 class UserHeader extends Component {
+
+  constructor(){
+
+    super();
+  
+    this.handlefacebookLogout = this.handlefacebookLogout.bind(this);
+  
+  }
+
+  handlefacebookLogout(){
+    console.log("logout attempted")
+    firebase.auth().signOut();
+    this.handleLogout();
+  }
 
   handleLogout(){
 
@@ -38,8 +51,9 @@ class UserHeader extends Component {
           return err;
           });
 
-
   }
+
+
 
     render() {
       return (
@@ -50,7 +64,7 @@ class UserHeader extends Component {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent" style={{float: "right"}}>
                   <ul className="navbar-nav mr-auto pull-right">
                     <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:"white"}}>
+                      <a className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color:"white"}}>
                         Browse
                       </a> 
                       <div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -62,7 +76,7 @@ class UserHeader extends Component {
                       </div>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" onClick={this.handleLogout} style={{color:"white"}}>Logout</a>
+                    <a className="nav-link" onClick = {this.handlefacebookLogout} style={{color:"white"}}>Logout</a>
                     </li>
                   </ul>
 

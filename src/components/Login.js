@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Label, Button} from 'react-bootstrap';
 import {history} from '../utils/utils';
 import LoginHeader from './LoginHeader';
-import Footer from './Footer';
+import Facebook from './Facebook';
 import '../App.css';
 
 const headers = {
@@ -155,6 +155,11 @@ class Login extends Component {
                             <Button bsStyle="danger" onClick={()=> {this.handleLogin()}} style={{width: "90%", fontSize: 18, fontWeight: 700, backgroundColor: 'red'}}>
                                 Login
                             </Button>
+
+                            <br></br>
+                            <br></br>
+
+                            <Facebook/>
 
 
 

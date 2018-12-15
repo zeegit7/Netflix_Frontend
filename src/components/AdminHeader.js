@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import {history} from '../utils/utils';
+import firebase from "firebase";
 
 const headers = {
   'Accept': 'application/json'
@@ -12,6 +12,12 @@ const logoutUrl = 'http://localhost:8080/user/logout';
 
 
 class AdminHeader extends Component {
+
+  handlefacebookLogout(){
+    console.log("logout attempted")
+    firebase.auth().signOut();
+    this.handleLogout();
+  }
 
   handleLogout(){
 
@@ -62,7 +68,7 @@ class AdminHeader extends Component {
                       </div>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" onClick = {this.handleLogout} style={{color:"white"}}>Logout</a>
+                      <a className="nav-link" onClick = {this.handlefacebookLogout} style={{color:"white"}}>Logout</a>
                     </li>
                   </ul>
 
